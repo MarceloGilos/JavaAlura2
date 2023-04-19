@@ -1,6 +1,6 @@
 package br.com.local.musica.model;
 
-public class Audio {
+public class Audio  {
     private String title;
     private double time;
     private int numberReproduction;
@@ -22,10 +22,10 @@ public class Audio {
     public void setTime(double time) {
         this.time = time;
     }
-    public int getnumberReproduction() {
+    public int getNumberReproduction() {
         return numberReproduction;
     }
-    public void setnumberReproduction(int numberReproduction) {
+    public void setNumberReproduction(int numberReproduction) {
         this.numberReproduction = numberReproduction;
     }
     public int getLikes() {
@@ -40,6 +40,10 @@ public class Audio {
     public void setRanking(int ranking) {
         this.ranking = ranking;
     }
+    
+    
+    
+    
 
     
 }
