@@ -1,5 +1,6 @@
 package br.com.local.musica.methods;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import br.com.local.musica.model.Audio;
@@ -7,7 +8,7 @@ import br.com.local.musica.model.Musica;
 import br.com.local.musica.model.Podcast;
 
 public class NewAudio {
-    public static Audio registerAudio() {
+    public static Audio registerAudio() throws InterruptedException, IOException {
         String option;
         while (true) {
             System.out.println("""
@@ -15,6 +16,7 @@ public class NewAudio {
                     1-Musica
                     2-Podcast
                     """);
+            System.out.print("Opção:");
             option = ScannerBugFit.scannerBugFitString();
             if (option.equals("1")) {
                 Musica musica = new Musica();
@@ -33,12 +35,14 @@ public class NewAudio {
                 return podCast;
             }else{
                 System.out.println("VALOR INVALIDO FAVOR ESCOLHA UM VALOR VALIDO");
+                System.in.read();
+                Comandos.limparTela();
             }
         }
     }
-    public static void selectAudio(ArrayList<Audio> audio){
+    public static void selectAudio(ArrayList<Audio> audio) throws IOException, InterruptedException{
         ListAudio.listAudio();
-        System.out.println("Selecione o Audio que quer deletar:");
+        System.out.print("Selecione o Audio que quer deletar:");
         ListAudio.removeAudio(audio.get(ScannerBugFit.scannerBugFitInt()-1));
     }
 }
