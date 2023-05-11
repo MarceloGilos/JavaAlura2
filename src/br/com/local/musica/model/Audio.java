@@ -1,6 +1,6 @@
 package br.com.local.musica.model;
 
-public class Audio  {
+public class Audio implements Comparable<Audio>  {
     private String title;
     private double time;
     private int numberReproduction;
@@ -39,6 +39,13 @@ public class Audio  {
     }
     public void setRanking(int ranking) {
         this.ranking = ranking;
+    }
+    
+    
+    @Override
+    public int compareTo(Audio outro) {
+     
+    return Integer.compare(this.getLikes(), outro.getLikes());
     }
     
     

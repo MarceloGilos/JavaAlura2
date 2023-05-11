@@ -7,6 +7,7 @@ import br.com.local.musica.methods.ScannerBugFit;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException, IOException {
+
         String opcao;
         while (true) {
             Comandos.limparTela();
